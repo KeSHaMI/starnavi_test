@@ -1,4 +1,4 @@
-# starnavi_test
+# Starnavi_test
 
 Technologies: DjangoRestFramework, djangorestframework_simplejwt(Token authetication)
 
@@ -16,7 +16,7 @@ Actions:
   - get_all(returns all instances of model) GET
   - get(returns single instance) GET
   - create(creates instance) POST
-  - update(returns udpated instance) POST!
+  - update(returns updated instance) POST!
   - delete(deletes instance) DELETE
   
  Models:
