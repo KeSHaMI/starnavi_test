@@ -12,6 +12,7 @@ in general data manipulation looks like
 domain/api/action/model/id(if operation requires(get, update, delete))/
 
 Actions:
+
   - get_all(returns all instances of model) GET
   - get(returns single instance) GET
   - create(creates instance) POST
@@ -19,24 +20,38 @@ Actions:
   - delete(deletes instance) DELETE
   
  Models:
-  - User(default django user fields + last_action_time): 
+ 
+  - User(default django user fields + last_action_time):
+  
     Important fields: last_login, last_action_time, email(unique), username
+    
     To create: email, username, password
+    
   - Post:
+  
     Fields: user, title, body, date_created(auto)
+    
     To create: user(id), title, body
+    
   - Like:
+  
     Fields: user, post, date_created(auto)
+    
     To create: user(id), post(id)
     
 # Tokens
 Usng JWT token authentication system
 
 POST api/token/:
+
   request: password, email 
+  
   response: access-token(1 hour), refresh-token(1 day)
+  
 POST api/token/refresh:
+
   request: refresh-token
+  
   response: access-token
   
 Using tokens:
