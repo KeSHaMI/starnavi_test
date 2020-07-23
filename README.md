@@ -12,52 +12,64 @@ in general data manipulation looks like
 domain/api/action/model/id(if operation requires(get, update, delete))/
 
 Actions:
+<table>
+  <tr>
+    <td><b>Action</b></td><td><b>Comment</b></td><td><b>Method</b></td>
+  </tr>
+  <tr>
+    <td>get_all</td><td>returns all instances of model</td><td>GET</td>
+  </tr>
+  <tr>
+    <td>get</td><td>returns single instance</td><td>GET</td>
+  </tr>
+  <tr>
+    <td>create</td><td>creates instance</td><td>POST</td>
+  </tr>
+  <tr>
+    <td>update</td><td>returns updated instance</td><td>POST!</td>
+  </tr>
+  <tr>
+    <td>delete</td><td>deletes instance</td><td>DELETE</td>
+  </tr>
+</table>
 
-  - get_all(returns all instances of model) GET
-  - get(returns single instance) GET
-  - create(creates instance) POST
-  - update(returns updated instance) POST!
-  - delete(deletes instance) DELETE
   
  Models:
- 
-  - User(default django user fields + last_action_time):
-  
-    Important fields: last_login, last_action_time, email(unique), username
-    
-    To create: email, username, password
-    
-  - Post:
-  
-    Fields: user, title, body, date_created(auto)
-    
-    To create: user(id), title, body
-    
-  - Like:
-  
-    Fields: user, post, date_created(auto)
-    
-    To create: user(id), post(id)
+ <table>
+  <tr>
+    <td><b>Model</b></td><td><b>Fields</b></td><td><b>To create</b></td>
+  </tr>
+  <tr>
+    <td>User(default django user fields + last_action_time)</td><td>last_login, last_action_time, email(unique), username</td><td>To email, username, password</td>
+  </tr>
+  <tr>
+    <td>Post</td><td>user, title, body, date_created(auto)</td><td>To user(id), title, body</td>
+  </tr>
+  <tr>
+    <td>Like</td><td>user, post, date_created(auto)</td><td>user(id), post(id)</td>
+  </tr>
+  </table>
+
     
 # Tokens
 Usng JWT token authentication system
-
-POST api/token/:
-
-  request: password, email 
-  
-  response: access-token(1 hour), refresh-token(1 day)
-  
-POST api/token/refresh:
-
-  request: refresh-token
-  
-  response: access-token
+<table>
+  <tr>
+    <td><b>Method</b></td><td><b>Link</b></td><td><b>Request</b></td><td><b>Response</b></td>
+  </tr>
+  <tr>
+    <td>POST</td><td>api/token/</td><td>password, email</td><td>access-token(1 hour), refresh-token(1 day)</td>
+  </tr>
+  <tr>
+    <td>POST</td><td>api/token/refresh</td><td>refresh-token</td><td>access-token</td>
+  </tr>
+</table>
   
 Using tokens:
   Add Authentication header(Bearer ACCESS-TOKEN) for each request(creating user doesn't require)
   
 # Analytics
+Link example
 GET api/analytic/?date_from=(ISO format datetime)&date_to=(ISO format datetime)
 
 response: likes amount aggregated by date(not Like objects, just numbers)
