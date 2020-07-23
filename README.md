@@ -59,4 +59,5 @@ Using tokens:
   
 # Analytics
 GET api/analytic/?date_from=(ISO format datetime)&date_to=(ISO format datetime)
+
 response: likes amount aggregated by date(not Like objects, just numbers)
