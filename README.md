@@ -40,10 +40,10 @@ Actions:
     <td><b>Model</b></td><td><b>Fields</b></td><td><b>To create</b></td>
   </tr>
   <tr>
-    <td>User(default django user fields + last_action_time)</td><td>last_login, last_action_time, email(unique), username</td><td>To email, username, password</td>
+    <td>User(default django user fields + last_action_time)</td><td>last_login, last_action_time, email(unique), username</td><td> email, username, password</td>
   </tr>
   <tr>
-    <td>Post</td><td>user, title, body, date_created(auto)</td><td>To user(id), title, body</td>
+    <td>Post</td><td>user, title, body, date_created(auto)</td><td>user(id), title, body</td>
   </tr>
   <tr>
     <td>Like</td><td>user, post, date_created(auto)</td><td>user(id), post(id)</td>
