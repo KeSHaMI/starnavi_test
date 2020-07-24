@@ -103,6 +103,7 @@ def test_add_like():
 
 
 	r = client.post(URL, data=data, headers={'Authorization':'Bearer {}'.format(token)})
+	
 	like = r.json()
 
 	assert r.status_code == 200
